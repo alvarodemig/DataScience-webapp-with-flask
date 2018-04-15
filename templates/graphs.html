@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<form class="form-models" method="post" action='/datasets/{{dataset}}/graphprocess/'>
+  <h2 class="form-models-heading" align'center'>Choose your graphs</h2>
+  <div class="row">
+  <div class="col-sm-4">
+	<h3>Histograms:</h3>
+	Select the continuous variables that you want to compare<br>
+	<select multiple name="histogram">
+		<option value=""></option>
+        {% for mod in columns %}
+			<option value="{{mod}}">{{mod}}</option>       
+		{% endfor %}
+	</select>
+	</div>
+  <div class="col-sm-4">
+	<h3>Box Plot (select 2 variables):</h3>
+	Categorical Variable.<br>
+	<select name="boxplotcat">Categorical Variable:
+		<option value=""></option>
+        {% for mod in columns %}
+			<option value="{{mod}}">{{mod}}</option>       
+		{% endfor %}
+	</select><br><br>
+	Numeric Variable<br>
+	<select name="boxplotnum">
+		<option value=""></option>
+        {% for mod in columns %}
+			<option value="{{mod}}">{{mod}}</option>       
+		{% endfor %}
+	</select>
+	</div>
+  <div class="col-sm-4">
+	<h3>Correlation Plots:</h3>
+	Select continuos variables<br>
+    <select multiple name="corr" >
+		<option value=""></option>
+        {% for mod in columns %}
+			<option value="{{mod}}">{{mod}}</option>       
+		{% endfor %}
+	</select><br>
+	Categorical Variable (Variable in data to map plot aspects to different colors) OPTIONAL<br>
+   <select name = "corrcat">
+   Categorical Variable (Variable in data to map plot aspects to different colors) OPTIONAL<br>
+		<option value=""></option> 
+        {% for mod in columns %}
+			<option value="{{mod}}">{{mod}}</option>       
+		{% endfor %}
+  </select>
+  </div>
+  </div>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Show Graphs</button>
+</form>
+</div>
+{% endblock %}
+

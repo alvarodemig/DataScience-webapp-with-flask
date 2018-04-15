@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<h2 align='center'>First rows:</h2>
+	{{head | safe}}
+<h2 align='center'>Variable Description Summary:</h2>
+	{{description | safe}}
+</div>
+{% endblock %}

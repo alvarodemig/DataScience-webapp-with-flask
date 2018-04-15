@@ -1,0 +1,9 @@
+python 3.6
+flask
+flask_bootstrap
+pandas
+numpy
+matplotlib
+sklearn
+seaborn
+io

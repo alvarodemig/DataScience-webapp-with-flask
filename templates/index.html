@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+</br>
+<div style="display: flex; justify-content: center;">
+<img src='/static/cool-science-logo.png' align = 'middle'>
+</div></br>
+<h1 align='center'>Choose a dataset!</h1>
+<h2 align='center'>Original datasets</h2>
+{% for ds in originalds %}
+<h3 align='center'><a href='datasets/{{ds}}'>{{ds}}</a></h3>
+{% endfor %}
+<h2 align='center'>Datasets after preprocessing:</h2>
+{% for ds in featuresds %}
+<h3 align='center'><a href='datasets/{{ds}}'>{{ds}}</a></h3>
+{% endfor %}
+</br>
+<h2 align='center'>Upload your own dataset:</h2>
+<div align='center'>
+<form action = "http://127.0.0.1:5000/" method = "POST" 
+         enctype = "multipart/form-data" align='center'>
+         <input type = "file" name = "file" align='center'>
+         <input type = "submit" align='center' value="Upload">
+</form></div>
+</div>
+{% endblock %}

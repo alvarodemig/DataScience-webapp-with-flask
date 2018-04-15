@@ -1,0 +1,28 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+	{% if dataset %}
+	Cool Science - Dataset: {{ dataset }}
+	{% else %}
+	Cool Science
+	{% endif %}
+{% endblock %}
+
+{% block navbar %}
+	{% if dataset %}
+	<div class="container">
+    <nav class="navbar navbar-default">
+	<h1 align='center'>Dataset: {{ dataset }}</h1>
+	<h4 align='center'>Cool Science: <a href="/">Home</a>
+	--- Dataset: 
+	<a href="/datasets/{{dataset}}">Summary</a> |
+	<a href="/datasets/{{dataset}}/preprocessing">Preprocessing</a> |
+	<a href="/datasets/{{dataset}}/graphs">Graphs</a> |
+	<a href="/datasets/{{dataset}}/models">Models</a> |
+	<a href="/datasets/{{dataset}}/predict">Predictions</a></h4>
+	</nav>
+	</div>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}

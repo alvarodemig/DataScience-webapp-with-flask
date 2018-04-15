@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+<h4 align='center'><b>Algorithm:</b> {{alg}}</h4>
+<h4 align='center'><b>Objective:</b> {{score}}</h4>
+<h4 align='center'><b>Response Variable: </b>{{res}}</h4>
+<h4 align='center'><b>Predictors:</b> {{predictors}}</h4>
+<h4 align='center'><b>K-Fold:</b> {{kfold}}</h4>
+</br>
+<div class="row">
+<h4 align='center'><b>Scores and Visualization:</b></h4>
+<div class="col-sm-6">
+	<div class="scrollme">  
+	  <table class="table table-striped table-hover">
+         {% for key, value in scores.items() %}
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+		{% endfor %}
+	</table>
+	</div></div>
+	
+<div class="col-sm-6">
+	<img src="data:image/png;base64, {{response}}">
+	</div></div>
+</div>
+{% endblock %}

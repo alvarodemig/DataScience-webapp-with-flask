@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<form class="form-models" method="post" action='/datasets/{{dataset}}/modelprocess/'>
+  <h2 class="form-models-heading" align='center'>Choose your model specifications</h2>
+  <h4 class="form-models-heading" align='center'>*Multiclass Classification not available</h4>
+   <div class="row">
+   
+  <div class="col-sm-3">
+  <h3>Algorithm</h3>
+  <select name="model">
+		<optgroup label="Classification">
+        {% for mod in clfmodels %}
+			<option value="{{mod}}.Classification">{{mod}}</option>       
+		{% endfor %}
+		</optgroup>
+		<optgroup label="Regression">
+		{% for mod in predmodels %}
+			<option value="{{mod}}.Regression">{{mod}}</option>       
+		{% endfor %}
+		</optgroup>
+
+  </select>
+  </div>
+  
+  <div class="col-sm-3">
+  <h3>Response Variable:</h3>
+   <select name="response">
+        {% for col in columns %}
+			<option value="{{col}}">{{col}}</option>       
+		{% endfor %}
+  </select>
+  </div>
+  
+  <div class="col-sm-3">
+  <h3>K-Fold Cross-Validation:</h3>
+   <select name="kfold">
+        {% for i in (3,5,10) %}
+			<option value="{{i}}">{{i}}</option>       
+		{% endfor %}
+  </select></div>
+  
+  <div class="col-sm-3">
+  <h3>Standard Scaling:</h3>
+   <select name="scaling">
+        {% for i in ('Yes', 'No') %}
+			<option value="{{i}}">{{i}}</option>       
+		{% endfor %}
+  </select>
+  </div>
+  </div></br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" align='center'>Fit Model</button>
+  </br>
+   <h3 align='center'>Variables. Check the variables that the model should use (leave blank for all):</h3>
+   <div align='center'>
+   <select multiple name="variables">
+		<option value=""></option>
+        {% for col in columns %}
+			<option value="{{col}}">{{col}}</option>       
+		{% endfor %}
+  </select></div>
+
+</form>
+</div>
+{% endblock %}

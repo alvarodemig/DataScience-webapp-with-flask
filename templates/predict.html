@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+<form class="form-models" method="post" action='/datasets/{{dataset}}/prediction/'>
+  <h2 class="form-models-heading" align='center'>MODEL PREDICTION: Choose your model specifications</h2>
+  <div class="row">
+  
+  <div class="col-sm-6">
+  <h3>Algorithm:</h3>
+  <select name="model">
+		<optgroup label="Classification">
+        {% for mod in clfmodels %}
+			<option value="{{mod}}.Classification">{{mod}}</option>       
+		{% endfor %}
+		</optgroup>
+		<optgroup label="Regression">
+		{% for mod in predmodels %}
+			<option value="{{mod}}.Regression">{{mod}}</option>       
+		{% endfor %}
+		</optgroup>
+  </select>
+  <h3>Target:</h3>
+   <select name="response">
+        {% for col in columns %}
+			<option value="{{col}}">{{col}}</option>       
+		{% endfor %}
+  </select>
+
+  <h3>Standard Scaling:</h3>
+   <select name="scaling">
+        {% for i in ('Yes', 'No') %}
+			<option value="{{i}}">{{i}}</option>       
+		{% endfor %}
+  </select>
+  
+  </br><br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Predict</button>
+  </div>
+  
+  <div class="col-sm-6">
+  <h2 class="form-models-heading">Introduce Predictor Values</h2>
+  {% for col in columns %}
+  <input type="text" name="{{col}}">
+   {{col}}<br>
+  {% endfor %}
+  </div>
+  </div> 
+</form>
+</div>
+{% endblock %}
+
+

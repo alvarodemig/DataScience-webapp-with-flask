@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<form class="form-features" method="post" action='/datasets/{{dataset}}/preprocessed_dataset/'>
+  <h2 class="form-features-heading" align='center'>Choose preprocessing options</h2>
+  <p align='center'>* If you want manual selection, leave blank the "Number of features" field</p>
+  <p align='center'>* Extra preprocessing (normalization, dummy variables...) in model and predict steps.</p></br>
+ 
+ <div class="row-fluid">  
+  <div class="col-xs-6">
+  <h2 align='center'>Feature Selection</h2>
+  
+   <h3>Automatic selection (Chi-squared)</h3>
+  Number of Features (Chi-squared):<br>
+  <input type="text" name="nfeatures">
+  <div>Response Variable:<br>
+  <select name="response">
+        {% for col in columns %}
+			<option value="{{col}}">{{col}}</option>       
+		{% endfor %}
+  </select>
+  </div>
+  
+  	<h3>Manual Selection (Chi-squared)</h3>
+	New Dataset Name: (extension of  {{ dataset}}_)<br>
+	<input type="text" name="newdataset"><br>
+	<div>Variables Selection:<br>
+	<select multiple name="manualfeatures">         
+        {% for col in columns %}
+			<option value="{{col}}">{{col}}</option>       
+		{% endfor %}
+	</select>
+  </div></div>
+
+
+  <div class="col-xs-6">
+  <h2 align='center'>Null values and unique value variables:</h2>
+  
+   <h3>Drop rows with null values if...</h3>
+	<select name="dropna">
+        <option value="all">Null in ALL columns</option>
+        <option value="any">Null in ANY column</option>
+        <option value="no">Never</option>
+  </select>
+ 
+ 
+  	<h3>Drop variables with a unique value</h3>
+	<select name="dropsame">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+  </select>
+  </div>
+	</div>
+
+  <div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Create New Dataset</button>
+  </div>
+</form>
+</div>
+
+{% endblock %}
