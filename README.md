@@ -100,4 +100,5 @@ Some ideas for improvement:
 - Customized error to give more information about happened (trying to predict a categorical variable with a regression  algorithm, etc.)
 ...
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/BxizdTrItTk/0.jpg)](https://www.youtube.com/watch?v=BxizdTrItTk)
+### VIDEO DEMONSTRATION
+[![LINK TO YOUTUBE VIDEO](https://img.youtube.com/vi/BxizdTrItTk/0.jpg)](https://www.youtube.com/watch?v=BxizdTrItTk)
