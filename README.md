@@ -1,2 +1,2 @@
-# DataScience-webapp-with-flask
+# DataScience webapp with Flask
 Data Science webapp to show some of the capabilities of Flask and libraries such as sklearn, pandas, matplotlib, seaborn...
