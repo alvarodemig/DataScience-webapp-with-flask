@@ -42,13 +42,6 @@ Available visualizations for the chosen variables:
 - BoxPlots
 - Correlation plots
 
-### Graphs
-Available visualizations for the chosen variables:
-
-- Histograms
-- BoxPlots
-- Correlation plots
-
 ### Models
 Models for Classification and Regression tasks.
 It does not support multiclass classification at this moment (extra code to manage some metrics and graphs)
@@ -64,7 +57,7 @@ Available Algorithms:
 
 K-Fold Cross-Validation (3, 5, 10)
 
-Standard Scalint (Yes, No)
+Standard Scaling (Yes, No)
 
 Manual Feature Selection
 
@@ -87,16 +80,21 @@ Regression Tasks Output:
 - Measured vs Predicted values plot
 
 ### Predictions
-Model building and prediction for a set of introduced values.
-
+Model building (with the complete dataset) and prediction for a set of introduced values.
+The model will only include the variables with an introduced value.
 The available algorithms are the same that were mentioned in "Models".
 It also supports multiclass problems.
 
-Other available options:
-- Standard Scaling
-- Use the predictors with an introduced value or use all the predictors.
+-------------------------------------------------------------------
 
-
-*Multiclass Classification not available
-
+Some ideas for improvement:
+- Add formats and delimiters
+- More feature estimators
+- Possibility to choose between Train/test splits and Cross-Validation
+- Add Clustering Algorithms.
+- Parameter tuning
+- Multiclass classification in "Models"
+- Save model results in a database
+- Predict using all the columns, filling the empty variables with the mean or other estimator (this would only work for numeric variables).
+...
 
