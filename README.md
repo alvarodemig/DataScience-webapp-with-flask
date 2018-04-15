@@ -101,4 +101,4 @@ Some ideas for improvement:
 ...
 
 ### VIDEO DEMONSTRATION
-[![LINK TO YOUTUBE VIDEO](https://img.youtube.com/vi/BxizdTrItTk/0.jpg)](https://www.youtube.com/watch?v=BxizdTrItTk)
+[![LINK TO YOUTUBE VIDEO](https://github.com/alvarodemig/DataScience-webapp-with-flask/blob/master/YoutubeLinkPicture.JPG)](https://www.youtube.com/watch?v=BxizdTrItTk)
