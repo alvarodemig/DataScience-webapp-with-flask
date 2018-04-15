@@ -97,5 +97,7 @@ Some ideas for improvement:
 - Save model results in a database
 - Predict using all the columns, filling the empty variables with the mean or other estimator (this would only work for numeric variables).
 - Output personalization
+- Customized error to give more information about happened (trying to predict a categorical variable with a regression  algorithm, etc.)
 ...
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/BxizdTrItTk/0.jpg)](https://www.youtube.com/watch?v=BxizdTrItTk)
