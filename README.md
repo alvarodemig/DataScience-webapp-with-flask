@@ -96,5 +96,6 @@ Some ideas for improvement:
 - Multiclass classification in "Models"
 - Save model results in a database
 - Predict using all the columns, filling the empty variables with the mean or other estimator (this would only work for numeric variables).
+- Output personalization
 ...
 
