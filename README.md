@@ -98,6 +98,7 @@ Some ideas for improvement:
 - Predict using all the columns, filling the empty variables with the mean or other estimator (this would only work for numeric variables).
 - Output personalization
 - Customized error to give more information about happened (trying to predict a categorical variable with a regression  algorithm, etc.)
+- Upload a file with data to predict.
 ...
 
 ### VIDEO DEMONSTRATION
