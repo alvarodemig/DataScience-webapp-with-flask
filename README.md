@@ -99,6 +99,7 @@ Some ideas for improvement:
 - Output personalization
 - Customized error to give more information about happened (trying to predict a categorical variable with a regression  algorithm, etc.)
 - Upload a file with data to predict.
+- Dataset shape and number of categorical and numeric variables.
 ...
 
 ### VIDEO DEMONSTRATION
