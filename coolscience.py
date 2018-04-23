@@ -306,9 +306,3 @@ def page_not_found(e):
 
 if __name__ == '__main__':
     app.run(debug=False)
-    
-    
-a='http://127.0.0.1:5000/datasets/'
-a.split('//')[0]
-
-help(request)
